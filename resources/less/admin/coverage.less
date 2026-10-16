@@ -1,0 +1,118 @@
+.FoF-Linguist-Coverage {
+    th, td {
+        border-collapse: collapse;
+        padding: 4px 15px;
+    }
+
+    td {
+        border-bottom: 2px solid var(--control-bg);
+        vertical-align: middle;
+
+        &:first-child {
+            min-width: 250px;
+        }
+    }
+
+    th {
+        text-align: left;
+        border-bottom: 2px solid var(--muted-color);
+    }
+}
+
+.FoF-Linguist-Coverage-Extension-Icon {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 6px;
+    margin-right: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.FoF-Linguist-Coverage-Extension-Title {
+    display: inline-block;
+    vertical-align: top;;
+    line-height: 30px;
+}
+
+.FoF-Linguist-Coverage-Namespace-Icon {
+    background: var(--control-bg);
+}
+
+.FoF-Linguist-Progress {
+    position: relative;
+    display: inline-block;
+    width: 240px;
+    height: 20px;
+    background: var(--control-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: center;
+    color: var(--alert-color);
+}
+
+.FoF-Linguist-Progress-Bar,
+.FoF-Linguist-Progress-Label,
+.FoF-Linguist-Progress-More {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.FoF-Linguist-Progress-Bar {
+    height: 20px;
+    background: var(--alert-bg);
+}
+
+.FoF-Linguist-Progress--full {
+    color: var(--alert-success-color);
+
+    .FoF-Linguist-Progress-Bar {
+        background: var(--alert-success-bg);
+    }
+}
+
+.FoF-Linguist-Progress--low {
+    // The label spans the whole bar, so it keeps the default colour where it sits on the empty track
+    .FoF-Linguist-Progress-Bar {
+        background: var(--alert-error-bg);
+    }
+}
+
+.FoF-Linguist-Progress-Label,
+.FoF-Linguist-Progress-More {
+    right: 0;
+}
+
+.FoF-Linguist-Progress-Label {
+    .FoF-Linguist-Progress:hover & {
+        display: none;
+    }
+}
+
+.FoF-Linguist-Progress-More {
+    display: none;
+
+    .FoF-Linguist-Progress:hover & {
+        display: block;
+    }
+}
+
+// Prevents a newline between progress bar and filter button
+.FoF-Linguist-Coverage-Progress-Wrap {
+    display: flex;
+
+    .Button {
+        line-height: 12px;
+        padding: 4px;
+        width: 20px;
+        margin-left: 5px;
+
+        .Button-icon {
+            font-size: 12px;
+        }
+    }
+}
