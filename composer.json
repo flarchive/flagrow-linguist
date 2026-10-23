@@ -1,0 +1,91 @@
+{
+    "name": "fof/linguist",
+    "description": "Customize translations",
+    "keywords": [
+        "extension",
+        "flarum",
+        "locale",
+        "translation"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Clark Winkelmann",
+            "email": "clark.winkelmann@gmail.com",
+            "homepage": "https://clarkwinkelmann.com/"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/FriendsOfFlarum/linguist/issues",
+        "source": "https://github.com/FriendsOfFlarum/linguist",
+        "forum": "https://discuss.flarum.org/d/7026"
+    },
+    "homepage": "https://friendsofflarum.org",
+    "funding": [
+        {
+            "type": "website",
+            "url": "https://opencollective.com/fof/donate"
+        }
+    ],
+    "require": {
+        "flarum/core": "^2.0.0",
+        "symfony/yaml": "^7.0"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "FoF Linguist",
+            "category": "language",
+            "icon": {
+                "name": "fas fa-italic",
+                "backgroundColor": "#e74c3c",
+                "color": "#fff"
+            },
+            "optional-dependencies": [
+                "flamarkt/backoffice"
+            ]
+        },
+        "flagrow": {
+            "discuss": "https://discuss.flarum.org/d/7026"
+        },
+        "flarum-cli": {
+            "modules": {
+                "githubActions": true
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "FoF\\Linguist\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FoF\\Linguist\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "flarum/phpstan": "^2.0.0",
+        "flarum/testing": "^2.0.0"
+    },
+    "scripts": {
+        "analyse:phpstan": "phpstan analyse",
+        "clear-cache:phpstan": "phpstan clear-result-cache",
+        "test": [
+            "@test:unit",
+            "@test:integration"
+        ],
+        "test:unit": "phpunit -c tests/phpunit.unit.xml",
+        "test:integration": "phpunit -c tests/phpunit.integration.xml",
+        "test:setup": "@php tests/integration/setup.php"
+    },
+    "scripts-descriptions": {
+        "analyse:phpstan": "Run static analysis",
+        "test": "Runs all tests.",
+        "test:unit": "Runs all unit tests.",
+        "test:integration": "Runs all integration tests.",
+        "test:setup": "Sets up a database for use with integration tests. Execute this only once."
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true
+}
